@@ -6,12 +6,48 @@ html, body {
     font-family: 'Montserrat', sans-serif;
 }
 
+p, h1, h2 ,h3 h4 {
+    margin: 0;
+}
+
 /* Helper Classes */
 
 .container-1440 {
     max-width: 1440px;
     padding: 0 23px;
     margin: auto;
+}
+
+.cta-black {
+    background: #000000;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 9px 19px;
+    border: 1px solid #000000;
+    font-size: 18px;
+    transition: all .3s ease;
+    font-weight: 600;
+}
+
+.cta-black:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+.cta-white {
+    background: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    padding: 9px 19px;
+    border: 1px solid #ffffff;
+    font-size: 18px;
+    transition: all .3s ease;
+    font-weight: 600;
+}
+
+.cta-white:hover {
+    background: #000000;
+    color: #ffffff;
 }
 
 /* END Helper Classes */
@@ -115,8 +151,179 @@ html, body {
 
 /* END Benefits Section */
 
-/* Hero Section */
-.hero {
+/* Site Deals Section */
+.site-deals__wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-/* END Hero Section */
+.site-deals__item {
+    width: 16.66666667%;
+    text-align: center;
+    padding: 45px 0;
+}
+
+.site-deals__cta {
+    width: 33.33333333%;
+    text-align: center;
+}
+
+.discount {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.discount .dollar {
+    font-size: 32px;
+}
+
+.discount .off {
+    font-size: 18px;
+    padding-left: 15px;
+}
+
+.discount-desc {
+    margin: 0;
+    padding: 10px 0 0 0;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+/* END Site Deals Section */
+
+/* VIP Section */
+.vip {
+    background-image: url(../images/vip-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    padding: 17px 0;
+}
+
+.vip__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.vip__heading-desc-wrapper {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vip__heading {
+    font-size: 32px;
+}
+
+.vip__desc {
+    font-size: 18px;
+    padding-left: 24px;
+}
+
+.vip__cta {
+    width: 25%;
+    text-align: center;
+}
+
+/* END VIP Section */
+
+/* Trending Section */
+.trending {
+    padding: 40px 0 62px 0;
+    text-align: center;
+}
+
+.trending h2 {
+    font-size: 36px;
+    padding-bottom: 20px;
+}
+
+.trending__desc {
+    font-size: 14px;
+    padding: 10px 0 20px 0;
+}
+
+.trending__wrapper {
+    max-width: 1020px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.trending__card {
+    width: 25%;
+    text-align: center;
+}
+
+.trending__card img {
+    padding-top: 20px;
+}
+
+.trending-title {
+    font-size: 24px;
+    padding: 10px 0 20px 0;
+    font-weight: 600;
+}
+
+.hashtag p {
+    font-size: 14px;
+    padding: 10px 20px;
+    border: 1px solid #000000;
+    display: inline-block;
+    border-radius: 50px;
+}
+
+.trending__hashtags {
+    display: flex;
+    max-width: 830px;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+
+/* END Trending Section */
+
+/* New Arrivals Section */
+
+.new-arrivals {
+    background-image: url('../images/new-arrivals.png');
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 41px;
+}
+
+.new-arrivals__heading {
+    max-width: 500px;
+}
+
+.new-arrivals__heading h2 {
+    font-size: 86px;
+    color: #FFFFFF;
+    padding-bottom: 21px;
+    padding-top: 47px;
+}
+
+.new-arrivals__desc {
+    font-size: 28px;
+    color: #FFFFFF;
+    padding-bottom: 43px;
+}
+
+.new-arrivals .container-1440 {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+/* END New Arrivals Section */
