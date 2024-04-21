@@ -1,6 +1,51 @@
 $(document).ready(function(){
 
     $('.cart-number').html(localStorage.length);
+    $('.js-quantity').html(localStorage.length);
+
+    function cartPage(){
+
+        totalPrice = 0;
+        
+
+        for (i=0; i<localStorage.length; i++){
+            let key = localStorage.key(i);  
+            let parseProduct = JSON.parse(localStorage.getItem(key));
+            $('.cart-page__card-wrapper').append(
+                `
+                <div class="cart-list-${parseProduct['id']}">
+                    <div class="cart-modal__card">
+                        <div class="cart-image">
+                            <img src="${parseProduct['image']}" />
+                        </div>
+                        <p class="cart-modal__title">${parseProduct['title']}</p>
+                        <p class="cart-modal__price">$${parseProduct['price']}</p>
+                        <a href="#" class="cta-black remove-btn-cart" data-id="${parseProduct['id']}">
+                            Remove Item
+                        </a>
+                    </div>
+                </div>
+
+                
+                `
+            );
+
+            // if (localStorage.getItem(`id-${parseProduct['id']}`) === null){
+            //     $(`.js-add-btn-${parseProduct['id']}`).fadeIn();
+            //     $(`.js-remove-btn-${parseProduct['id']}`).fadeOut();
+            // } else {
+            //     $(`.js-add-btn-${parseProduct['id']}`).fadeOut();
+            //     $(`.js-remove-btn-${parseProduct['id']}`).fadeIn();
+            // }
+
+            
+            totalPrice += parseFloat(parseProduct['price']);
+            
+        }
+
+        $('.sum').html(`$${totalPrice.toFixed(2)}`);
+
+    }
 
     function cartItems(){
         
@@ -13,7 +58,7 @@ $(document).ready(function(){
                     <div class="cart-modal__card">
                         <div class="cart-image" style="background-image: url(${parseProduct['image']})"></div>
                         <p class="cart-modal__title">${parseProduct['title']}</p>
-                        <p class="cart-modal__price">${parseProduct['price']}</p>
+                        <p class="cart-modal__price">$${parseProduct['price']}</p>
                     </div>
                 </li>
                 `
@@ -60,7 +105,7 @@ $(document).ready(function(){
                 <div class="cart-modal__card">
                     <div class="cart-image" style="background-image: url(${parseProduct['image']})"></div>
                     <p class="cart-modal__title">${parseProduct['title']}</p>
-                    <p class="cart-modal__price">${parseProduct['price']}</p>
+                    <p class="cart-modal__price">$${parseProduct['price']}</p>
                 </div>
             </li>
             `
@@ -105,5 +150,37 @@ $(document).ready(function(){
 
 
     cartItems();
+    cartPage();
+
+    $('.remove-btn-cart').on('click', function(remove){
+        remove.preventDefault();
+
+        let dataId    = $(this).attr('data-id');
+        let itemTitle = $(this).attr('data-title');
+        let itemPrice = $(this).attr('data-price');
+        let itemImage = $(this).attr('data-image');
+
+        $(`.cart-list-${dataId}`).remove();
+
+        localStorage.removeItem(`id-${dataId}`);
+
+        $('.cart-number').html(localStorage.length);
+        $('.js-quantity').html(localStorage.length);
+
+        console.log(dataId);
+
+
+        totalPrice = 0;
+        
+        for (i=0; i<localStorage.length; i++){
+            let key = localStorage.key(i);  
+            let parseProduct = JSON.parse(localStorage.getItem(key));
+            totalPrice += parseFloat(parseProduct['price']);
+            
+        }
+
+        $('.sum').html(`$${totalPrice.toFixed(2)}`);
+
+    });
 
 });
