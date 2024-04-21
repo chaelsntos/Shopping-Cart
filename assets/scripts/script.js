@@ -1,13 +1,15 @@
 $(document).ready(function(){
 
+    //Update Cart Hover and Cart Page Quantities
     $('.cart-number').html(localStorage.length);
     $('.js-quantity').html(localStorage.length);
 
     function cartPage(){
 
+        //Set Total Price
         totalPrice = 0;
         
-
+        //Loop through localstorage and append items on Cart Page
         for (i=0; i<localStorage.length; i++){
             let key = localStorage.key(i);  
             let parseProduct = JSON.parse(localStorage.getItem(key));
@@ -25,30 +27,21 @@ $(document).ready(function(){
                         </a>
                     </div>
                 </div>
-
-                
                 `
             );
 
-            // if (localStorage.getItem(`id-${parseProduct['id']}`) === null){
-            //     $(`.js-add-btn-${parseProduct['id']}`).fadeIn();
-            //     $(`.js-remove-btn-${parseProduct['id']}`).fadeOut();
-            // } else {
-            //     $(`.js-add-btn-${parseProduct['id']}`).fadeOut();
-            //     $(`.js-remove-btn-${parseProduct['id']}`).fadeIn();
-            // }
-
-            
+            //Loop through and Add the integers
             totalPrice += parseFloat(parseProduct['price']);
             
         }
 
+        //Last item of array and Final Sum
         $('.sum').html(`$${totalPrice.toFixed(2)}`);
 
     }
 
     function cartItems(){
-        
+        //Loop through localstorage and append items on Cart Modal
         for (i=0; i<localStorage.length; i++){
             let key = localStorage.key(i);  
             let parseProduct = JSON.parse(localStorage.getItem(key));
@@ -64,6 +57,7 @@ $(document).ready(function(){
                 `
             );
 
+            //Check if Item is already added then change button from buy item to remove item button
             if (localStorage.getItem(`id-${parseProduct['id']}`) === null){
                 $(`.js-add-btn-${parseProduct['id']}`).fadeIn();
                 $(`.js-remove-btn-${parseProduct['id']}`).fadeOut();
@@ -71,9 +65,6 @@ $(document).ready(function(){
                 $(`.js-add-btn-${parseProduct['id']}`).fadeOut();
                 $(`.js-remove-btn-${parseProduct['id']}`).fadeIn();
             }
-    
-            
-            console.log(parseProduct['id']);
         }
 
     }
