@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Helper Classes */
+
+.container-1440 {
+    max-width: 1440px;
+    padding: 0 23px;
+    margin: auto;
+}
+
+/* END Helper Classes */
+
+/* Main Navigation */
+.main-nav {
+    font-size: 14px;
+    position: sticky;
+    top: 0;
+    background: #FFFFFF;
+}
+
+.main-nav .container-1440 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav__buttons {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav__nav-items ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    margin: 0;
+}
+
+.main-nav__nav-items li a {
+    padding: 0 15px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+}
+
+.page-active a {
+    font-weight: bold;
+}
+
+.main-nav__buttons ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    margin: 0;
+}
+
+.main-nav__buttons ul li {
+    padding: 0 20px;
+}
+
+.main-nav__nav-logo {
+    padding: 27px 0;
+}
+
+.main-nav__currency .down-arrow {
+    padding: 0 12px 0 10px;
+}
+
+.main-nav__currency img {
+    padding: 5px;
+}
+
+.main-nav__currency {
+    display: flex;
+    align-items: center;
+    border: 1px solid #F2F2F2;
+    border-radius: 50px;
+}
+
+.main-nav__currency p {
+    margin: 0;
+    font-weight: 400;
+}
+
+/* END Main Navigation */
+
+/* Benefits Section */
+.benefits {
+    background-color: #F2F2F2;
+}
+
+.benefits__item-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.benefits__item {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    width: 20%;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.benefits__item .icon {
+    padding-right: 15px;
+}
+
+/* END Benefits Section */
+
+/* Hero Section */
+.hero {
+}
+
+/* END Hero Section */
